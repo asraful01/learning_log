@@ -3,6 +3,9 @@
 
 <p>Topic:{{topic}}</p>
 <p>Entries:</p>
+<p>
+    <a href="{% url 'learning_logs:new_entry' topic.id%}">Add new Entry</a>
+</p>
 <ul>
     {% for entry in entries %}
     <li>
@@ -12,6 +15,7 @@
     {%empty%}
         <li>There are no entries for this topic yet.</li>
     {%endfor%}
+    
 
 </ul>
 {%endblock content %}
