@@ -1,0 +1,14 @@
+{% extends "learning_logs/base.html"%}
+
+{% block content%}
+<p>Add a new Topic:</p>
+
+<form action="{% url 'learning_logs:new_topic'%}" method='POST'>
+   <!-- django uses this template tag to prevent attackers from using the form to gain unauthorzied access to the server(cross-site request forgery) -->
+    {% csrf_token%}
+    <!-- displays the form: django creates all necessery fields auto -->
+    {{form.as_p}}
+    <button name="submit">Add topic</button>
+
+</form>
+{%endblock content%}
